@@ -63,7 +63,7 @@ export default function CowListScreen({ navigation }) {
                 <Text>Sex: {item.sex}</Text>
                 <Text>Pen: {item.pen}</Text>
                 <Text>Status: {item.status}</Text>
-                <Text> Last Event: {item.lastEvent ? new Date(item.lastEvent).toLocaleString() : 'N/A'}</Text>
+                <Text>Last Event: {item.lastEvent ? new Date(item.lastEvent).toLocaleString() : 'N/A'}</Text>
               </View>
 
               <TouchableOpacity onPress={() => handleDelete(item.earTag)}>
