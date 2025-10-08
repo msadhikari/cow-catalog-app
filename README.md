@@ -1,7 +1,6 @@
 # Cow Catalog App
 
-A simple React Native (CLI) mobile application to manage and browse cows. Works on both **iOS** and **Android**.  
-
+A simple React Native (CLI) mobile application to manage and browse cows.
 ## Features
 
 - List all cows with ear tag, sex, pen, status, and last event.
@@ -14,8 +13,8 @@ A simple React Native (CLI) mobile application to manage and browse cows. Works 
 ## Tech Stack
 
 - React Native CLI (No Expo)
-- Context API for global state management
-- AsyncStorage for local data persistence
+- React redux for global state management
+- local state for data persistence
 - React Navigation for navigation
 - Picker for dropdown selection
 - Responsive layouts using flex and scaling utilities
@@ -25,5 +24,5 @@ A simple React Native (CLI) mobile application to manage and browse cows. Works 
 1. Clone the repo:
 
 ```bash
-git clone https://github.com/your-username/cow-catalog-app.git
+git https://github.com/msadhikari/cow-catalog-app.git
 cd cow-catalog-app
