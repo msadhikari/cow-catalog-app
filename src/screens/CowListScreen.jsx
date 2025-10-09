@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text, FlatList, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { setSearch, setStatusFilter, setPenFilter, saveCow, deleteCow } from '../store/cowSlice';
+import { setSearch, setStatusFilter, setPenFilter, deleteCowAsync, loadCows } from '../store/cowSlice';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 export default function CowListScreen({ navigation }) {
   const { cows, search, statusFilter, penFilter } = useSelector(state => state.cow);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadCows());
+  }, [dispatch]);
 
   const filteredCows = cows.filter(cow => 
     cow.earTag.includes(search) &&
@@ -15,7 +19,7 @@ export default function CowListScreen({ navigation }) {
   );
 
   const handleDelete = (earTag) => {
-    dispatch(deleteCow(earTag));
+    dispatch(deleteCowAsync(earTag));
   };
 
   return (
@@ -67,7 +71,7 @@ export default function CowListScreen({ navigation }) {
               </View>
 
               <TouchableOpacity onPress={() => handleDelete(item.earTag)}>
-               <MaterialIcons name="delete" size={24} color="red" />
+                <MaterialIcons name="delete" size={24} color="red" />
               </TouchableOpacity>
             </View>
           </TouchableOpacity>
