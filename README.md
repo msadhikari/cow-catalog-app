@@ -16,7 +16,8 @@ A simple React Native (CLI) mobile application to manage and browse cows.
 - React redux for global state management
 - local state for data persistence
 - React Navigation for navigation
-- @react-native-community/netinfo - Network detection for offline behavior
+- @react-native-community/netinfo - Network detection for offline behavior (optional)
+- AsyncStorage for local data persistence
 - React Native Vector Icons - Icons and UI visuals
 - Responsive layouts using flex and scaling utilities
 
